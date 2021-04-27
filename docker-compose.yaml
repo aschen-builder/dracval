@@ -38,6 +38,6 @@ services:
       - AUTO_BACKUP_SCHEDULE=0 */1 * * *
       - UPDATE_ON_STARTUP=0
     volumes:
-    - ./valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
-    - ./valheim/server:/home/steam/valheim
+    - ./realms/Nidavellir-Starter/saves:/home/steam/.config/unity3d/IronGate/Valheim
+    - ./realms/Nidavellir-Starter/server:/home/steam/valheim
     restart: unless-stopped
