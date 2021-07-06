@@ -1,0 +1,84 @@
+version: "3"
+services:
+  nidavellir-starter:
+    image: mbround18/valheim:latest
+    ports:
+      - 2456:2456/udp
+      - 2457:2457/udp
+      - 2458:2458/udp
+    environment:
+      - PORT=2456
+      - NAME=SD-Nidavellir
+      - WORLD=Nidavellir-Starter
+      - PASSWORD=LL$i<}tNz|+uuEg
+      - TYPE=BepInExFull
+      - "MODS=
+        https://cdn.thunderstore.io/live/repository/packages/TripleSteel-ValheimNetworkOptimizer-1.1.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/Seb-SebNetCompressionPlugin-1.0.3.zip,
+        https://cdn.thunderstore.io/live/repository/packages/JPster-ValheimAntiCheat-0.0.7.zip,
+        https://cdn.thunderstore.io/live/repository/packages/HackShardGaming-ValheimPermissions-1.0.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/HackShardGaming-World_of_Valheim_SSC-0.5.0.zip,
+        https://cdn.thunderstore.io/live/repository/packages/HackShardGaming-World_of_Valheim_Zones-0.5.16.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ItsKaa-VChat-2.0.0.zip,
+        https://cdn.thunderstore.io/live/repository/packages/1010101110-Multiverse-0.0.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/1010101110-multiplayerboatdamage-0.0.1.zip,
+        https://cdn.thunderstore.io/live/repository/packages/jrobsonchase-PositionalAudio-2.2.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/aequasi-DiscordNotifier-0.0.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ASharpPen-Drop_That-1.8.0.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ASharpPen-Spawn_That-0.8.0.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ASharpPen-Sell_That-1.2.0.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ASharpPen-Custom_Raids-1.3.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ASharpPen-Enhanced_Progress_Tracker-1.0.1.zip,
+        https://cdn.thunderstore.io/live/repository/packages/EnderBombz-BossController-1.0.0.zip
+      "
+      - TZ=America/Seattle
+      - PUBLIC=0
+      - AUTO_UPDATE=0
+      - AUTO_BACKUP=1
+      - AUTO_BACKUP_SCHEDULE=0 */1 * * *
+      - UPDATE_ON_STARTUP=0
+    volumes:
+    - ./realms/Nidavellir-Starter/saves:/home/steam/.config/unity3d/IronGate/Valheim
+    - ./realms/Nidavellir-Starter/server:/home/steam/valheim
+    restart: unless-stopped
+  jotunnheim-starter:
+    image: mbround18/valheim:latest
+    ports:
+      - 2456:2456/udp
+      - 2457:2457/udp
+      - 2458:2458/udp
+    environment:
+      - PORT=2456
+      - NAME=SD-Jotunnheim
+      - WORLD=Jotunnheim-Starter
+      - PASSWORD=LL$i<}tNz|+uuEg
+      - TYPE=BepInExFull
+      - "MODS=
+        https://cdn.thunderstore.io/live/repository/packages/TripleSteel-ValheimNetworkOptimizer-1.1.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/Seb-SebNetCompressionPlugin-1.0.3.zip,
+        https://cdn.thunderstore.io/live/repository/packages/JPster-ValheimAntiCheat-0.0.7.zip,
+        https://cdn.thunderstore.io/live/repository/packages/HackShardGaming-ValheimPermissions-1.0.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/HackShardGaming-World_of_Valheim_SSC-0.5.0.zip,
+        https://cdn.thunderstore.io/live/repository/packages/HackShardGaming-World_of_Valheim_Zones-0.5.16.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ItsKaa-VChat-2.0.0.zip,
+        https://cdn.thunderstore.io/live/repository/packages/1010101110-Multiverse-0.0.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/1010101110-multiplayerboatdamage-0.0.1.zip,
+        https://cdn.thunderstore.io/live/repository/packages/jrobsonchase-PositionalAudio-2.2.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/aequasi-DiscordNotifier-0.0.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ASharpPen-Drop_That-1.8.0.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ASharpPen-Spawn_That-0.8.0.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ASharpPen-Sell_That-1.2.0.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ASharpPen-Custom_Raids-1.3.5.zip,
+        https://cdn.thunderstore.io/live/repository/packages/ASharpPen-Enhanced_Progress_Tracker-1.0.1.zip,
+        https://cdn.thunderstore.io/live/repository/packages/EnderBombz-BossController-1.0.0.zip
+      "
+      - TZ=America/Seattle
+      - PUBLIC=0
+      - AUTO_UPDATE=0
+      - AUTO_BACKUP=1
+      - AUTO_BACKUP_SCHEDULE=0 */1 * * *
+      - UPDATE_ON_STARTUP=0
+    volumes:
+    - ./realms/Nidavellir-Starter/saves:/home/steam/.config/unity3d/IronGate/Valheim
+    - ./realms/Nidavellir-Starter/server:/home/steam/valheim
+    restart: unless-stopped
