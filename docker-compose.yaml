@@ -1,16 +1,16 @@
 version: "3"
 services:
-  nidavellir:
+  dracval-dev:
     image: lloesche/valheim-server
     cap_add:
       - sys_nice
     volumes:
-      - $HOME/Valheim-Servers/config:/config
-      - $HOME/Valheim-Servers/data:/opt/valheim
+      - $HOME/Valheim-Servers/Devheim/config:/config
+      - $HOME/Valheim-Servers/Devheim/data:/opt/valheim
     ports:
       - "2456-2457:2456-2457/udp"
       - "9001:9001/tcp"
     env_file:
-      - $HOME/Valheim-Servers/valheim.env
+      - $HOME/Valheim-Servers/Devheim/valheim.env
     restart: always
     stop_grace_period: 2m
