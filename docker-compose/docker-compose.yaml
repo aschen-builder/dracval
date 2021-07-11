@@ -1,16 +1,17 @@
 version: "3"
 services:
-  dracval-dev:
+  world:
     image: lloesche/valheim-server
     cap_add:
       - sys_nice
     volumes:
-      - $HOME/Valheim-Servers/Devheim/config:/config
-      - $HOME/Valheim-Servers/Devheim/data:/opt/valheim
+      - $HOME/Valheim-Servers/${WORLD_NAME}/config:/config
+      - $HOME/Valheim-Servers/${WORLD_NAME}/data:/opt/valheim
     ports:
       - "2456-2457:2456-2457/udp"
       - "9001:9001/tcp"
+      - "9101:9101/tcp"
     env_file:
-      - $HOME/Valheim-Servers/Devheim/valheim.env
+      - $HOME/Valheim-Servers/${WORLD_NAME}/valheim.env
     restart: always
     stop_grace_period: 2m
